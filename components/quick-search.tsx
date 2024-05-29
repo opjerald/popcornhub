@@ -70,11 +70,10 @@ const QuickSearch = () => {
             {response.data.movies.map((movie, index) => (
               <Link
                 key={index}
-                href={`/movies/${movie.id}`}
+                href={`/movies/${movie.imdb_code}`}
                 className="flex items-start gap-3 border-b border-border p-4 last:border-b-0 hover:bg-slate-100 hover:dark:bg-slate-800"
                 onClick={() => {
                   setQuery("");
-                  setResponse(null);
                 }}
               >
                 <Image

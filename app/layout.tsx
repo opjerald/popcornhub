@@ -6,7 +6,6 @@ import ThemeProvider from "@/components/theme-provider";
 
 import "./globals.css";
 import Footer from "@/components/footer";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 

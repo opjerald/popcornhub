@@ -33,7 +33,7 @@ const Torrents = ({ torrents, title }: TorrentsProps) => {
               </span>
             </Link>
           </Button>
-          <Button variant="outline" className="rounded-r-xl rounded-l-none border-2" asChild>
+          <Button variant="outline" className="rounded-r-xl rounded-l-none border-2 border-l-0" asChild>
             <Link
               href={generateMagnetLink(torrent.hash, title)}
               target="_blank"

@@ -1,11 +1,10 @@
 import { getMovieDetails, getMovieSuggestions } from "@/actions/movies";
 import MovieDetails from "@/components/movie-details";
-import { cn } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
 interface MovieDetailsPageProps {
   params: {
-    movieId: string;
+    imdbId: string;
   };
 }
 
@@ -13,7 +12,7 @@ const MovieDetailsPage = async ({ params }: MovieDetailsPageProps) => {
   async function getDetails() {
     try {
       const movieDetails = await getMovieDetails({
-        movie_id: +params.movieId,
+        imdb_id: params.imdbId,
         with_cast: true,
         with_images: true,
       });

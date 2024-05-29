@@ -200,9 +200,12 @@ const MovieDetails = ({ movie: { data }, suggestions }: MovieDetailsProps) => {
       <div className="space-y-5">
         <h1 className="text-2xl">Similar movies</h1>
         <div className="flex flex-wrap items-center gap-5">
-          {suggestions.data.movies.map((movie, index) => (
-            <MovieCard key={index} movie={movie} isSmall />
-          ))}
+          {suggestions.data.movies.map((movie, index) => {
+            if (movie.id === 0) {
+              return null;
+            }
+            return <MovieCard key={index} movie={movie} isSmall />;
+          })}
         </div>
       </div>
     </div>

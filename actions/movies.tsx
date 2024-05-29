@@ -97,8 +97,8 @@ export const getMovieSuggestions = async (movie_id: number) => {
 };
 
 export interface MovieDetailsProps {
-  movie_id: number;
-  imdb_id?: number;
+  movie_id?: number;
+  imdb_id?: string;
   with_images?: boolean;
   with_cast?: boolean;
 }

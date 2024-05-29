@@ -25,7 +25,7 @@ const MovieCard = ({ movie, isSmall }: MovieCardProps) => {
       )}
     >
       <CardContent className="space-y-2 p-0">
-        <Link href={`/movies/${movie.id}`}>
+        <Link href={`/movies/${movie.imdb_code}`}>
           <Image
             src={image}
             alt={movie.title_english}
@@ -39,7 +39,7 @@ const MovieCard = ({ movie, isSmall }: MovieCardProps) => {
         {!isSmall && (
           <div className="flex flex-col items-start gap-1">
             <Link
-              href={`/movies/${movie.id}`}
+              href={`/movies/${movie.imdb_code}`}
               className="w-[80%] truncate text-sm font-semibold tracking-wide hover:opacity-75 md:text-base"
             >
               {movie.title}

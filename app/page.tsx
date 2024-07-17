@@ -1,8 +1,8 @@
 import { getMovies } from "@/actions/movies";
+
 import Category from "@/components/category";
 
 const HomePage = async () => {
-  const listMovies = await getMovies();
   const newReleases = await getMovies({ sort_by: "year" });
   const recentlyAdded = await getMovies({ sort_by: "date_added" });
   const topRated = await getMovies({ sort_by: "rating" });
@@ -11,11 +11,6 @@ const HomePage = async () => {
 
   return (
     <section className="mx-auto w-[80%] space-y-10 py-10">
-      <Category
-        title="All movies"
-        data={listMovies.data.movies}
-        seeMoreUrl="/movies"
-      />
       <Category
         title="New releases"
         data={newReleases.data.movies}

@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Star } from "lucide-react";
 
 import { Movie } from "@/types";
+import { cn } from "@/lib/utils";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface MovieCardProps {
   movie: Movie;

@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import queryString from "query-string";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { Loader2, Search } from "lucide-react";
 
 import { useClickOutside, useDebounce } from "@/lib/use-hooks";

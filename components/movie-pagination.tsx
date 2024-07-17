@@ -38,8 +38,6 @@ const MoviePagination = ({
     siblingCount,
   });
 
-  console.log(paginationRange)
-
   function generateUrl(pageNumber: number) {
     const params = Object.fromEntries(searchParams);
     let url = queryString.stringifyUrl({

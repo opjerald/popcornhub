@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { Search } from "lucide-react";
 
 import ModeToggle from "@/components/mode-toggle";
 import QuickSearch from "@/components/quick-search";
-import { Search } from "lucide-react";
 
 const Navbar = () => {
   return (

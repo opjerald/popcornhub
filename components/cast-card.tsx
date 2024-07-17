@@ -1,6 +1,7 @@
-import { Cast } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
+
+import { Cast } from "@/types";
 
 interface CastCard {
   cast: Cast;

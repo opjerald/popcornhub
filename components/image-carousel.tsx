@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -5,7 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 interface ImageCarouselProps {
   images: string[];

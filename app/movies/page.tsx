@@ -1,8 +1,10 @@
+import { notFound } from "next/navigation";
+
 import { getMovies, MovieFilterProps } from "@/actions/movies";
+
 import Filters from "@/components/filters";
 import MovieCard from "@/components/movie-card";
 import MoviePagination from "@/components/movie-pagination";
-import { notFound } from "next/navigation";
 
 interface BrowsePageProps {
   searchParams: MovieFilterProps;

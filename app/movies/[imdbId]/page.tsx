@@ -1,6 +1,8 @@
-import { getMovieDetails, getMovieSuggestions } from "@/actions/movies";
-import MovieDetails from "@/components/movie-details";
 import { notFound } from "next/navigation";
+
+import { getMovieDetails, getMovieSuggestions } from "@/actions/movies";
+
+import MovieDetails from "@/components/movie-details";
 
 interface MovieDetailsPageProps {
   params: {

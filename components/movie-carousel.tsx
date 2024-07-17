@@ -1,3 +1,5 @@
+import { Movie } from "@/types";
+
 import {
   Carousel,
   CarouselContent,
@@ -5,8 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import MovieCard from "./movie-card";
-import { Movie } from "@/types";
+import MovieCard from "@/components/movie-card";
 
 interface MovieCarouselProps {
   data: Movie[];

@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { MoveLeft } from "lucide-react";
 import Link from "next/link";
+import { MoveLeft } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   return (

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
-import { Download, PlayCircle, Star, ThumbsUp } from "lucide-react";
+import { useState } from "react";
+import { PlayCircle, Star, ThumbsUp } from "lucide-react";
 
 import { MovieDetails as Details, Movies } from "@/types";
 import { cn } from "@/lib/utils";
@@ -13,9 +13,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import CastCard from "@/components/cast-card";
-import Torrents from "./torrents";
-import Category from "./category";
-import MovieCard from "./movie-card";
+import Torrents from "@/components/torrents";
+import MovieCard from "@/components/movie-card";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 

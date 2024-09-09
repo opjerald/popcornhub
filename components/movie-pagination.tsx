@@ -51,8 +51,8 @@ const MoviePagination = ({
 
     return url;
   }
-
-  if(paginationRange?.length === 1) {
+  
+  if(paginationRange?.length === 1 || movieCount === 0) {
     return null;
   }
 

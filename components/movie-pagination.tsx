@@ -4,9 +4,7 @@ import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
-  PaginationFirst,
   PaginationItem,
-  PaginationLast,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
@@ -59,11 +57,6 @@ const MoviePagination = ({
   return (
     <Pagination>
       <PaginationContent>
-        {currentPage !== 1 && (
-          <PaginationItem>
-            <PaginationFirst href={generateUrl(1)} />
-          </PaginationItem>
-        )}
         <PaginationItem>
           <PaginationPrevious
             href={generateUrl(currentPage === 1 ? 1 : currentPage - 1)}
@@ -100,13 +93,6 @@ const MoviePagination = ({
             )}
           />
         </PaginationItem>
-        {currentPage !== +paginationRange![paginationRange!.length - 1] && (
-          <PaginationItem>
-            <PaginationLast
-              href={generateUrl(+paginationRange![paginationRange!.length - 1])}
-            />
-          </PaginationItem>
-        )}
       </PaginationContent>
     </Pagination>
   );

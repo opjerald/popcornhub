@@ -18,7 +18,7 @@ export const useDebounce = (value: string, delay: number) => {
 
 type Event = MouseEvent | TouchEvent;
 
-export const useClickOutside = <T extends HTMLElement = HTMLElement>(
+export const useClickOutside = <T extends HTMLElement | null = HTMLElement>(
   ref: React.RefObject<T>,
   handler: (event: Event) => void,
 ) => {

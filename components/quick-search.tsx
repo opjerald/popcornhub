@@ -15,7 +15,7 @@ import { Movies } from "@/types";
 
 const QuickSearch = () => {
   const controllerRef = useRef<AbortController | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const [query, setQuery] = useState("");

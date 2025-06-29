@@ -70,7 +70,7 @@ const QuickSearch = () => {
               <Link
                 key={index}
                 href={`/movies/${movie.imdb_code}`}
-                className="flex items-start gap-3 border-b border-border p-4 last:border-b-0 hover:bg-slate-100 hover:dark:bg-slate-800"
+                className="flex items-start gap-3 border-b border-border p-4 last:border-b-0 hover:bg-slate-100 dark:hover:bg-slate-800"
                 onClick={() => {
                   setQuery("");
                 }}

@@ -8,7 +8,7 @@ interface CastCard {
 }
 
 const CastCard = ({ cast }: CastCard) => {
-  const [image, setImage] = useState(cast.url_small_image);
+  const [image, setImage] = useState(cast.url_small_image ??= "/images/default.jpg");
 
   return (
     <div className="flex items-center gap-2">

@@ -7,14 +7,15 @@ import MovieCard from "@/components/movie-card";
 import MoviePagination from "@/components/movie-pagination";
 
 interface BrowsePageProps {
-  searchParams: MovieFilterProps;
+  searchParams: Promise<MovieFilterProps>;
 }
 
-const BrowsePage = async ({ searchParams }: BrowsePageProps) => {
+const BrowsePage = async (props: BrowsePageProps) => {
+  const searchParams = await props.searchParams;
   const result = await getMovies(searchParams);
 
   return (
-    <section className="mx-auto w-[80%] py-10">
+    <section className="mx-auto w-[80%] py-10 flex-1">
       <Filters />
       {!!result.data.movies ? (
         <div className="grid grid-cols-1 place-items-center gap-10 py-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">

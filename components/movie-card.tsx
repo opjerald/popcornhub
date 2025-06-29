@@ -20,11 +20,11 @@ const MovieCard = ({ movie, isSmall }: MovieCardProps) => {
   return (
     <Card
       className={cn(
-        "border-0 transition-transform hover:scale-105",
+        "bg-transparent border-0 transition-transform hover:scale-105",
         isSmall ? "w-auto" : "w-[210px]",
       )}
     >
-      <CardContent className="space-y-2 p-0">
+      <CardContent className="flex flex-col gap-3 p-0">
         <Link href={`/movies/${movie.imdb_code}`}>
           <Image
             src={image}

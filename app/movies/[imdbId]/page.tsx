@@ -5,12 +5,13 @@ import { getMovieDetails, getMovieSuggestions } from "@/actions/movies";
 import MovieDetails from "@/components/movie-details";
 
 interface MovieDetailsPageProps {
-  params: {
+  params: Promise<{
     imdbId: string;
-  };
+  }>;
 }
 
-const MovieDetailsPage = async ({ params }: MovieDetailsPageProps) => {
+const MovieDetailsPage = async (props: MovieDetailsPageProps) => {
+  const params = await props.params;
   async function getDetails() {
     try {
       const movieDetails = await getMovieDetails({
@@ -19,7 +20,7 @@ const MovieDetailsPage = async ({ params }: MovieDetailsPageProps) => {
         with_images: true,
       });
 
-      if(movieDetails.data.movie.id === 0) {
+      if (movieDetails.data.movie.id === 0) {
         return notFound();
       }
 
@@ -30,11 +31,13 @@ const MovieDetailsPage = async ({ params }: MovieDetailsPageProps) => {
   }
 
   const movieDetails = await getDetails();
-  const movieSuggestions = await getMovieSuggestions(movieDetails.data.movie.id)
+  const movieSuggestions = await getMovieSuggestions(
+    movieDetails.data.movie.id,
+  );
   return (
-    <section className="relative">
+    <section className="relative flex-1">
       <div
-        className="absolute h-[700px] w-full bg-cover bg-[top_center] bg-no-repeat before:absolute before:inset-x-0 before:mx-auto before:h-[700px] before:w-full before:bg-gradient-to-b before:from-background/70 before:to-background"
+        className="before:from-background/70 before:to-background absolute h-[700px] w-full bg-cover bg-position-[top_center] bg-no-repeat before:absolute before:inset-x-0 before:mx-auto before:h-[700px] before:w-full before:bg-linear-to-b"
         style={{
           backgroundImage: `url(${movieDetails.data.movie.background_image_original})`,
         }}

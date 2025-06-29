@@ -12,7 +12,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Popcorn Hub",
   description: "Download free movie torrent, watch it while eating popcorn",
-  
 };
 
 export default function RootLayout({
@@ -29,9 +28,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="flex flex-col">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

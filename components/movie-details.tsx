@@ -11,7 +11,7 @@ import { MovieDetails as Details, Movies } from "@/types";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import CastCard from "@/components/cast-card";
 import Torrents from "@/components/torrents";
 import MovieCard from "@/components/movie-card";
@@ -49,7 +49,7 @@ const MovieDetails = ({ movie: { data }, suggestions }: MovieDetailsProps) => {
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="z-[2] flex flex-col items-start gap-10 lg:flex-row">
+      <div className="z-2 flex flex-col items-start gap-10 lg:flex-row">
         {/* Image */}
         <div className="flex w-full flex-col items-center justify-center rounded-xl lg:block lg:w-auto">
           <div
@@ -74,9 +74,13 @@ const MovieDetails = ({ movie: { data }, suggestions }: MovieDetailsProps) => {
                   className={cn(
                     !!data.movie.yt_trailer_code
                       ? "w-[690px] max-w-3xl border-0 bg-transparent shadow-none"
-                      : "border-1 bg-background shadow-xl",
+                      : "border bg-background shadow-xl",
                   )}
                 >
+                  <DialogHeader>
+                    <DialogTitle />
+                    <DialogDescription />
+                  </DialogHeader>
                   <ReactPlayer
                     url={`https://youtube.com/watch?v=${data.movie.yt_trailer_code}`}
                   />
@@ -159,7 +163,7 @@ const MovieDetails = ({ movie: { data }, suggestions }: MovieDetailsProps) => {
       </div>
 
       {/* Screenshots */}
-      <div className="z-[2] space-y-5">
+      <div className="z-2 space-y-5">
         <h1 className="text-center text-2xl lg:text-left">Screenshots</h1>
         <div className="flex flex-wrap items-center justify-center gap-5 lg:justify-start">
           {screnshots.map((image, index) => (
@@ -170,7 +174,7 @@ const MovieDetails = ({ movie: { data }, suggestions }: MovieDetailsProps) => {
                   alt={data.movie.title}
                   width={386.094}
                   height={162.156}
-                  className="rounded-lg border-2 border-white"
+                  className="rounded-lg border-2 border-white bg-cover"
                 />
               </DialogTrigger>
               <DialogContent className="max-w-7xl border-0 bg-transparent shadow-none">
